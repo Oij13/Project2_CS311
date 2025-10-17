@@ -3,14 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link type="stylesheet" href="style.css"></link>
+    <link rel="stylesheet" href="style.css">
     <title>Pokemon Search</title>
 </head>
 <body>
-    <h1>Search for a Pokemon:</h1>
-        <input type="search" id="poke-input"></input>
-        <button id="poke-button">Pickachu</button>
-    <div id="poke-container">
+    <div class="main-container">
+        <h1>
+            <span class="pikachu"></span>
+            Search Pokemon: 
+            <span class="pokeball"></span>
+        </h1>
+        <div class="search-container">
+            <button id="all-button">See All</button>
+            <input type="search" id="poke-input"></input>
+            <button id="poke-button">Search</button>
+        </div>
+    </div>
+
+    <div class="parent-container">
+        <div class="poke-container"id="poke-container">
+        </div>
+        <div class="poke-detail"id="poke-detail"></div>
     </div>
         
     <script src="script.js"></script>
