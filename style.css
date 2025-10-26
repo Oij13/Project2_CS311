@@ -1,14 +1,51 @@
-body{
-    background-color:aliceblue;
+
+:root {
+    --pokeball-red: red;
+    --pokeball-black: black;
+    --pokeball-white: white;
+    --pokeball-size: 15px;
 }
-/* Custom pokeball using CSS */
+
+body{
+    background: 
+        radial-gradient(circle at 20px 20px, rgba(255,0,0,0.05) 8px, rgba(0,0,0,0.02) 8px, rgba(0,0,0,0.02) 10px, rgba(255,255,255,0.03) 10px, rgba(255,255,255,0.03) 15px, transparent 15px),
+        radial-gradient(circle at 60px 60px, rgba(255,0,0,0.05) 8px, rgba(0,0,0,0.02) 8px, rgba(0,0,0,0.02) 10px, rgba(255,255,255,0.03) 10px, rgba(255,255,255,0.03) 15px, transparent 15px),
+        linear-gradient(135deg, #f8fbff 0%, #e8f4fd 50%, #d4e9fc 100%);
+    background-size: 120px 120px, 120px 120px, 100% 100%;
+    background-position: 0 0, 60px 60px, 0 0;
+}
+
+button{
+    background: rgb(222, 231, 255);
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 24px;
+    width: max-content;
+    height: auto;
+}
+button:hover{
+    transform: translateY(-2px);
+    background: linear-gradient(135deg, rgb(222, 231, 255) 0%, rgb(152, 180, 255) 100%);
+}
+.nav{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Custom pokeball styling */
 .pokeball{
     display: inline-block;
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    background: linear-gradient(180deg, #ff0000 0%, #ff0000 45%, #000 45%, #000 55%, #fff 55%, #fff 100%);
-    border: 2px solid #000;
+    background: linear-gradient(180deg, 
+        var(--pokeball-red) 0%, var(--pokeball-red) 45%, 
+        var(--pokeball-black) 45%, var(--pokeball-black) 55%, 
+        var(--pokeball-white) 55%, var(--pokeball-white) 100%
+    );
+    border: 2px solid var(--pokeball-black);
     position: relative;
     vertical-align: middle;
 }
@@ -21,9 +58,10 @@ body{
     width:6px;
     height:6px;
     border-radius: 50%;
-    background: white;
-    border: 2px solid black;
+    background: var(--pokeball-white);
+    border: 2px solid var(--pokeball-black);
 }
+
 .pikachu img{
     height: 90px;
     width: auto;
@@ -42,6 +80,7 @@ body{
     justify-content: center;
     align-items: center;
     flex-direction: row;
+    text-align:center;
 }
 .parent-container{
     padding: 20px;
@@ -57,9 +96,17 @@ body{
     justify-content: center;
     align-items:center;
     flex-direction: column;
-    width: 100%;
     padding: 20px;
     min-height: 400px;
+}
+.card-list {
+    width: 75% !important;
+}
+
+.card-list button {
+    width: 100%;
+    height: auto;
+    font-size: 1.2rem;
 }
 .card {
     width: auto;
